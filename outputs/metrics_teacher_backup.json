@@ -1,0 +1,18 @@
+{
+  "teacher_val_before": {
+    "accuracy": 0.6082474226804123,
+    "f1_macro": 0.25213675213675213
+  },
+  "teacher_test_before": {
+    "accuracy": 0.5814432989690722,
+    "f1_macro": 0.24511082138200782
+  },
+  "teacher_val_after": {
+    "accuracy": 0.8515463917525773,
+    "f1_macro": 0.834888888888889
+  },
+  "teacher_test_after": {
+    "accuracy": 0.8597938144329897,
+    "f1_macro": 0.8315032902846523
+  }
+}

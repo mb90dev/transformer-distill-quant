@@ -1,0 +1,45 @@
+paths:
+  data_dir: data_cli
+  artifacts_dir: artifacts_cli
+  outputs_dir: outputs_cli
+  tokenized_teacher_dir: artifacts_cli/tokenized_teacher
+  tokenized_student_dir: artifacts_cli/tokenized_student
+
+data:
+  source: https://raw.githubusercontent.com/isaaccs/sentiment-analysis-for-financial-news/master/all-data.csv
+  encoding: latin-1
+  separator: null
+  text_column: null
+  label_column: null
+  label_map:
+    negative: 0
+    neutral: 1
+    positive: 2
+  split_seed: 42
+  test_size: 0.2
+  max_length: 128
+
+models:
+  teacher_model_name: distilroberta-base
+  student_model_name: prajjwal1/bert-tiny
+  num_labels: 3
+
+training:
+  batch_size: 8
+  baseline_epochs: 3
+  teacher_epochs: 3
+  distill_epochs: 5
+  student_lr: 2e-5
+  teacher_lr: 1e-5
+  grad_clip: 1.0
+  seed: 42
+
+distill:
+  temperature: 1.0
+  alpha: 0.8
+  use_warm_start: true
+
+benchmark:
+  warmup_steps: 50
+  measure_steps: 200
+  batches: [1, 8]
